@@ -4,13 +4,13 @@
 #define TOTAL_MATERIAS 3
 
 int main() {
- float notas [TOTAL_ESTUDIANTES][TOTAL_MATERIAS];
- float promedioPorEstudiante[TOTAL_ESTUDIANTES];
- float promedioPorMateria [TOTAL_MATERIAS];
- int aprobadosPorMateria[TOTAL_MATERIAS];
- int reprobadosPorMateria[TOTAL_MATERIAS];
- char materias[TOTAL_MATERIAS][20] = {"Programación", "Álgebra", "Cálculo"};
- int i, j;
+    float notas[TOTAL_ESTUDIANTES][TOTAL_MATERIAS];
+    float promedioPorEstudiante[TOTAL_ESTUDIANTES];
+    float promedioPorMateria[TOTAL_MATERIAS];
+    int aprobadosPorMateria[TOTAL_MATERIAS];
+    int reprobadosPorMateria[TOTAL_MATERIAS];
+    char materias[TOTAL_MATERIAS][20] = {"Programación", "Álgebra", "Cálculo"};
+    int i, j;
   // Ingreso de notas con nombres de materias
     for (i = 0; i < TOTAL_ESTUDIANTES; i++) {
         printf("\n Ingreso de notas para estudiante %d:\n", i + 1);
