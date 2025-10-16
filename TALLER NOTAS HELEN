@@ -1,0 +1,96 @@
+#include <stdio.h> 
+#define TOTAL_ESTUDIANTES 5
+#define TOTAL_MATERIAS 3
+
+int main() {
+ float notas [TOTAL_ESTUDIANTES][TOTAL_MATERIAS];
+ float promedioPorEstudiante[TOTAL_ESTUDIANTES];
+ float promedioPorMateria [TOTAL_MATERIAS];
+ int aprobadosPorMateria[TOTAL_MATERIAS];
+ int reprobadosPorMateria[TOTAL_MATERIAS];
+ char materias[TOTAL_MATERIAS][20] = {"Programación", "Álgebra", "Cálculo"};
+ int i, j;
+  // Ingreso de notas con nombres de materias
+    for (i = 0; i < TOTAL_ESTUDIANTES; i++) {
+        printf("\n Ingreso de notas para estudiante %d:\n", i + 1);
+        for (j = 0; j < TOTAL_MATERIAS; j++) {
+            do {
+                printf("  Nota en %s (0 a 10): ", materias[j]);
+                scanf("%f", &notas[i][j]);
+                if (notas[i][j] < 0 || notas[i][j] > 10) {
+                    printf("Nota inválida. Intenta otra vez.\n");
+                }
+            } while (notas[i][j] < 0 || notas[i][j] > 10);
+        }
+    }
+    // Promedio por estudiante
+    for (i = 0; i < TOTAL_ESTUDIANTES; i++) {
+        float sumaNotas = 0;
+        for (j = 0; j < TOTAL_MATERIAS; j++) {
+            sumaNotas += notas[i][j];
+        }
+        promedioPorEstudiante[i] = sumaNotas / TOTAL_MATERIAS;
+    }
+    // Promedio y aprobados por materia
+    for (j = 0; j < TOTAL_MATERIAS; j++) {
+        float sumaMateria = 0;
+        aprobadosPorMateria[j] = 0;
+        reprobadosPorMateria[j] = 0;
+
+        for (i = 0; i < TOTAL_ESTUDIANTES; i++) {
+            sumaMateria += notas[i][j];
+            if (notas[i][j] >= 6) {
+                aprobadosPorMateria[j]++;
+            } else {
+                reprobadosPorMateria[j]++;
+            }
+        }
+        promedioPorMateria[j] = sumaMateria / TOTAL_ESTUDIANTES;
+    }
+    // Nota más alta y baja por estudiante
+    printf("\nNota más alta y más baja por estudiante:\n");
+    for (i = 0; i < TOTAL_ESTUDIANTES; i++) {
+        float notaAlta = notas[i][0];
+        float notaBaja = notas[i][0];
+
+        for (j = 1; j < TOTAL_MATERIAS; j++) {
+            if (notas[i][j] > notaAlta) notaAlta = notas[i][j];
+            if (notas[i][j] < notaBaja) notaBaja = notas[i][j];
+        }
+
+        printf("Estudiante %d → Alta: %.1f | Baja: %.1f\n", i + 1, notaAlta, notaBaja);
+    }
+
+    // Nota más alta y baja por materia
+    printf("\n Nota más alta y más baja por materia:\n");
+    for (j = 0; j < TOTAL_MATERIAS; j++) {
+        float notaAlta = notas[0][j];
+        float notaBaja = notas[0][j];
+
+        for (i = 1; i < TOTAL_ESTUDIANTES; i++) {
+            if (notas[i][j] > notaAlta) notaAlta = notas[i][j];
+            if (notas[i][j] < notaBaja) notaBaja = notas[i][j];
+        }
+
+        printf("%s → Alta: %.1f | Baja: %.1f\n", materias[j], notaAlta, notaBaja);
+    }
+
+    // Mostrar promedios
+    printf("\nPromedios por estudiante:\n");
+    for (i = 0; i < TOTAL_ESTUDIANTES; i++) {
+        printf("Estudiante %d → Promedio: %.2f\n", i + 1, promedioPorEstudiante[i]);
+    }
+
+    printf("\nPromedios por materia:\n");
+    for (j = 0; j < TOTAL_MATERIAS; j++) {
+        printf("%s → Promedio: %.2f\n", materias[j], promedioPorMateria[j]);
+    }
+
+    // Mostrar aprobados y reprobados
+    printf("\nAprobados y reprobados por materia:\n");
+    for (j = 0; j < TOTAL_MATERIAS; j++) {
+        printf("%s → Aprobados: %d | Reprobados: %d\n", materias[j], aprobadosPorMateria[j], reprobadosPorMateria[j]);
+    }
+
+    return 0;
+}
