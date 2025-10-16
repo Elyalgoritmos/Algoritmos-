@@ -3,26 +3,28 @@
 #define TOTAL_MATERIAS 3
 
 int main() {
- float notas [TOTAL_ESTUDIANTES][TOTAL_MATERIAS];
- float promedioPorEstudiante[TOTAL_ESTUDIANTES];
- float promedioPorMateria [TOTAL_MATERIAS];
- int aprobadosPorMateria[TOTAL_MATERIAS];
- int reprobadosPorMateria[TOTAL_MATERIAS];
- char materias[TOTAL_MATERIAS][20] = {"Programación", "Álgebra", "Cálculo"};
- int i, j;
-  // Ingreso de notas con nombres de materias
+    float notas[TOTAL_ESTUDIANTES][TOTAL_MATERIAS];
+    float promedioPorEstudiante[TOTAL_ESTUDIANTES];
+    float promedioPorMateria[TOTAL_MATERIAS];
+    int aprobadosPorMateria[TOTAL_MATERIAS];
+    int reprobadosPorMateria[TOTAL_MATERIAS];
+    char materias[TOTAL_MATERIAS][20] = {"Programación", "Álgebra", "Cálculo"};
+    int i, j;
+
+    // Ingreso de notas con nombres de materias
     for (i = 0; i < TOTAL_ESTUDIANTES; i++) {
-        printf("\n Ingreso de notas para estudiante %d:\n", i + 1);
+        printf("\nIngreso de notas para estudiante %d:\n", i + 1);
         for (j = 0; j < TOTAL_MATERIAS; j++) {
             do {
                 printf("  Nota en %s (0 a 10): ", materias[j]);
                 scanf("%f", &notas[i][j]);
                 if (notas[i][j] < 0 || notas[i][j] > 10) {
-                    printf("Nota inválida. Intenta otra vez.\n");
+                    printf("     Nota inválida. Intenta otra vez.\n");
                 }
             } while (notas[i][j] < 0 || notas[i][j] > 10);
         }
     }
+
     // Promedio por estudiante
     for (i = 0; i < TOTAL_ESTUDIANTES; i++) {
         float sumaNotas = 0;
@@ -31,6 +33,7 @@ int main() {
         }
         promedioPorEstudiante[i] = sumaNotas / TOTAL_MATERIAS;
     }
+
     // Promedio y aprobados por materia
     for (j = 0; j < TOTAL_MATERIAS; j++) {
         float sumaMateria = 0;
@@ -47,6 +50,7 @@ int main() {
         }
         promedioPorMateria[j] = sumaMateria / TOTAL_ESTUDIANTES;
     }
+
     // Nota más alta y baja por estudiante
     printf("\nNota más alta y más baja por estudiante:\n");
     for (i = 0; i < TOTAL_ESTUDIANTES; i++) {
@@ -62,7 +66,7 @@ int main() {
     }
 
     // Nota más alta y baja por materia
-    printf("\n Nota más alta y más baja por materia:\n");
+    printf("\nNota más alta y más baja por materia:\n");
     for (j = 0; j < TOTAL_MATERIAS; j++) {
         float notaAlta = notas[0][j];
         float notaBaja = notas[0][j];
@@ -94,3 +98,4 @@ int main() {
 
     return 0;
 }
+
