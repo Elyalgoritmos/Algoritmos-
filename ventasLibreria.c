@@ -1,4 +1,4 @@
-//Control de ventas en una librería
+//Control de ventas en una librería//
 //Una librería desea implementar un programa en C que le permita llevar el control de las// 
 //ventas de sus 5 libros más vendidos. El sistema debe permitir registrar los datos de cada //
 //libro, calcular el subtotal por venta y mostrar al final el total de dinero recaudado.//
