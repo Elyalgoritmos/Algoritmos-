@@ -1,5 +1,8 @@
-Una academia imparte varios cursos y necesita un programa en C que permita registrar cuántos estudiantes se han inscrito en cada curso, calcular cuántos cupos quedan disponibles y cuánto dinero se ha recaudado en total. 🔹 Requisitos del programa: Pedir al usuario cuántos cursos ofrece la academia. Para cada curso: Ingresar el número máximo de cupos. Ingresar el costo del curso. Ingresar cuántos estudiantes se han inscrito. Usar arreglos unidimensionales para guardar los datos de cada curso. Si los inscritos no superan los cupos, mostrar: Cuántos cupos quedan. Cuánto dinero se recaudó en ese curso. Si los inscritos superan los cupos, mostrar un mensaje de error. Al final, mostrar la recaudación total de todos los cursos.Una academia imparte varios cursos y necesita un programa en C que permita registrar cuántos estudiantes se han inscrito en cada curso, calcular cuántos cupos quedan disponibles y cuánto dinero se ha recaudado en total. 
-🔹 Requisitos del programa: Pedir al usuario cuántos cursos ofrece la academia. Para cada curso: Ingresar el número máximo de cupos.
-Ingresar el costo del curso. Ingresar cuántos estudiantes se han inscrito. Usar arreglos unidimensionales para guardar los datos de cada curso. 
-  Si los inscritos no superan los cupos, mostrar: Cuántos cupos quedan. Cuánto dinero se recaudó en ese curso. Si los inscritos superan los cupos, mostrar un mensaje de error. 
-  Al final, mostrar la recaudación total de todos los cursos.
+//Una academia imparte varios cursos y necesita un programa en C que permita registrar cuántos estudiantes se han inscrito en cada curso,//
+//calcular cuántos cupos quedan disponibles y cuánto dinero se ha recaudado en total. 🔹 Requisitos del programa: Pedir al usuario cuántos cursos ofrece la academia. //
+//Para cada curso: Ingresar el número máximo de cupos. Ingresar el costo del curso. Ingresar cuántos estudiantes se han inscrito. Usar arreglos unidimensionales para guardar los datos de cada curso. //
+//Si los inscritos no superan los cupos, mostrar://
+//Cuántos cupos quedan. //
+//Cuánto dinero se recaudó en ese curso.//
+//Si los inscritos superan los cupos, mostrar un mensaje de error.//
+//Al final, mostrar la recaudación total de todos los cursos.//
